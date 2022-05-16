@@ -2,9 +2,9 @@ from tkinter import *
 root = Tk()
 
 root.title("Driving License")
-root.geometry("400x200")
+root.geometry("400x250")
 
-show_result = Label(root)
+
 # Basic tkinter template
 
 root.configure(bg="white")
@@ -27,13 +27,13 @@ label_name = Label(root)
 label_dob = Label(root)
 label_pin = Label(root)
 label_address = Label(root)
-label_vehical_type = Label(root)
+label_vehicle_type = Label(root)
 
 
 # Define the function
 def Show():
-    id = 12345678
-    print(type(id))
+    id_value = 12345678
+    print(type(id_value))
     name = "Swasti"
     print(type(name))
     dob = "2 June 2010"
@@ -42,12 +42,19 @@ def Show():
     print(type(pin))
     address = "India, Maharastra, Pune"
     print(type(address))
-    vehical_type = "Two Wheeler, Four Wheeler"
-    print(type(vehical_type))
+    vehicle_type = ["Two Wheeler", "Four Wheeler"]
+    print(type(vehicle_type))
+    
+    label_id ['text'] = id_value 
+    label_name ['text'] = name
+    label_dob ['text'] = dob
+    label_pin ['text'] = pin
+    label_address ['text'] = address
+    label_vehicle_type ['text'] = vehicle_type
     
     
 # Create a button
-
+button1 = Button(root, text = "Show My Driving License", command = Show)
 button1.configure(width = 20 , activebackground = "#9EC6EE", relief= FLAT)
 button1_window = canvas.create_window(200, 235, anchor=CENTER, window=button1)
 label_id_window = canvas.create_window(80, 60, anchor=CENTER, window=label_id)
@@ -59,4 +66,4 @@ label_vehicle_no_window = canvas.create_window(335, 180, anchor=CENTER, window=l
 canvas.pack()
 
 # tkinter basic template end statement
-
+root.mainloop()
